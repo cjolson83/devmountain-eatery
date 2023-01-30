@@ -66,3 +66,7 @@ textarea {
     height: 120px;
     font-size: medium;
 }
+
+.instructions{
+    width: 100%
+}

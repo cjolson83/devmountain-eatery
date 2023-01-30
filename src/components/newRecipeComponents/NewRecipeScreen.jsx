@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./NewRecipe.module.css";
 import { Formik } from "formik";
-import axios from "axios"
+import axios from "axios";
 
 const NewRecipeScreen = () => {
   const [ingredients, setIngredients] = useState([]);
@@ -29,15 +29,14 @@ const NewRecipeScreen = () => {
     values.ingredients = ingredients;
     console.log(values);
     axios
-    .post(`https://recipes.devmountain.com/recipes`, values)
-    .then((res) => {
-      console.log(res.data);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+      .post(`https://recipes.devmountain.com/recipes`, values)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
-
 
   const ingredientDisplay = ingredients.map((ing) => {
     return (
@@ -145,6 +144,7 @@ const NewRecipeScreen = () => {
                 Add Another
               </button>
               <textarea
+                className={styles.instructions}
                 id="instructions"
                 placeholder="What are the instructions?"
                 value={values.instructions}
